@@ -8,3 +8,5 @@
 - Install rust-analyzer extension: In VS Code, go to the Extensions view (Ctrl+Shift+X or the extensions icon in the Activity Bar), search for "rust-analyzer", and install it.
 - Enable Test Explorer (if needed): By default, the Test Explorer should be enabled, but if you don't see tests, check your VS Code settings for rust-analyzer.testExplorer and ensure it is ticked. 
 
+- then find a file, run the tests. They will appear on the "Testing" tab (the lab container icon)
+
