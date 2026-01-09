@@ -1,0 +1,10 @@
+* PROJ Rust
+** PROJ FAQ
+*** When VsCode does not recognize tests
+
+- To launch and run Rust tests in VS Code, you primarily use the rust-analyzer extension, which provides in-editor controls and integrates with the Test Explorer. 
+
+- Install Rust: Ensure Rust is installed on your system.
+- Install rust-analyzer extension: In VS Code, go to the Extensions view (Ctrl+Shift+X or the extensions icon in the Activity Bar), search for "rust-analyzer", and install it.
+- Enable Test Explorer (if needed): By default, the Test Explorer should be enabled, but if you don't see tests, check your VS Code settings for rust-analyzer.testExplorer and ensure it is ticked. 
+
