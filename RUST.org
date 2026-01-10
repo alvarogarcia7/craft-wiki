@@ -1,6 +1,18 @@
 * PROJ Rust
+** PROJ Programming Patterns
+*** PROJ Error Handling
+**** ? / Result<>
+- Interesting pattern for cumulating results into a Result<X, _>, where X is your desired type and _ is the error. The `anyhow` crate is also interesting
+#+BEGIN_SRC
+let options = SkimOptionsBuilder::default()
+  .multi(false)
+  .prompt(Some(prompt))
+  .build()
+  .map_err(|e| anyhow::anyhow!("Failed to build skim options: {}", e))?;
+#+END_SRC
 ** PROJ FAQ
-*** When VsCode does not recognize tests
+*** PROJ VsCode FAQ
+**** When VsCode does not recognize tests
 
 - To launch and run Rust tests in VS Code, you primarily use the rust-analyzer extension, which provides in-editor controls and integrates with the Test Explorer. 
 
