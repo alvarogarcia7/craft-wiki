@@ -1,0 +1,34 @@
+* PROJ Bash
+** PROJ Validation
+*** Validate format without executing the script
+
+
+The string "-n" has two primary uses in Bash, depending on the context in which it appears: as a command-line option for the bash executable itself or as a conditional expression operator within a script or an if statement. 
+1. As a Bash Command-Line Option (bash -n script.sh) 
+When used as an option when invoking the bash shell, -n stands for "no execute". 
+Function: It instructs Bash to read commands but not execute them.
+Purpose: This is primarily used to check a shell script for syntax errors without actually running the script and potentially causing any unintended side effects. 
+Example:
+#+BEGIN_SRC
+bash -n your_script.sh
+#+END_SRC
+
+- Note: Not documented in bash manpage: https://unix.stackexchange.com/questions/793918/bash-n-is-a-not-documented-in-manpages-or-info-documents
+- It can be found in `set`: https://linuxcommand.org/lc3_man_pages/seth.html
+
+#+BEGIN_SRC
+NAME
+    set - Set or unset values of shell options and positional parameters.
+
+SYNOPSIS
+    set [-abefhkmnptuvxBCHP] [-o option-name] [--] [arg ...]
+
+DESCRIPTION
+    Set or unset values of shell options and positional parameters.
+    
+    Change the value of shell attributes and positional parameters, or
+    display the names and values of shell variables.
+    
+    Options:
+      -n  Read commands but do not execute them.
+#+END_SRC
