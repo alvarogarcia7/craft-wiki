@@ -1,0 +1,5 @@
+* PROJ Git
+** Use commit message from command line
+#+BEGIN_SRC
+git commit -F -
+#+END_SRC
