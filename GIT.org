@@ -3,3 +3,39 @@
 #+BEGIN_SRC
 git commit -F -
 #+END_SRC
+
+** Squash all commits into a new orphan branch
+
+#+BEGIN_SRC
+To squash all commits into a new, single-commit orphan branch, use a combination of git checkout --orphan and git commit commands. This process creates a new branch with no parent commits, effectively giving you a clean slate with your current working directory's content, which you then commit as the sole, initial commit. 
+Steps to Squash All Commits into an Orphan Branch
+Ensure your current branch has all desired changes.
+Before starting, make sure all your intended changes are present in your working directory (they do not need to be committed on your current branch).
+Create and switch to a new orphan branch.
+This command creates a new branch called squashed-branch with no history and switches to it. The index and working tree will contain all the files from your previous branch.
+
+git checkout --orphan squashed-branch
+
+Stage all changes and commit.
+Add all the current files to the staging area and then make a single, new commit. This will be the only commit in your new branch's history.
+Stage all files:
+
+git add -A
+
+Commit the changes with a single message:
+
+git commit -m "Your desired commit message"
+
+Replace your old branch (optional).
+If you want your original branch name (e.g., main) to point to this new, single-commit history, you can force the move after switching back to it.
+Switch to the original branch:
+
+git branch -M main
+
+Note: The name squashed-branch will be renamed to main.
+Force push to the remote repository (if applicable).
+If you're working with a remote repository and want to overwrite its history with this new, squashed version, you will need to force push.
+bash
+git push --force origin main
+Caution: Force pushing overwrites history and can cause issues for collaborators working on the same branch. Only do this if you are sure it is safe or you have coordinated with your team. 
+#+END_SRC
