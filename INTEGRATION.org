@@ -1,0 +1,3 @@
+* Integration
+** At the boundary of a program, there are no objects, only data structures.
+** At the end of a system, you need well defined APIs for input-output. One way is to have Schemas (e.g., JSON Schema, XML Schema, YAML Schema) or Types (e.g., Java, Rust, Python)
