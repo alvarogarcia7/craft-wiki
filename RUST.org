@@ -22,3 +22,13 @@ let options = SkimOptionsBuilder::default()
 
 - then find a file, run the tests. They will appear on the "Testing" tab (the lab container icon)
 
+** PROJ Pipeline
+*** For caching the dependencies, use this
+
+#+BEGIN_SRC
+# Dockerfile
+RUN echo "fn main() {}" >> main.rs
+RUN cargo build # caches dependencies
+COPY main.rs /app
+RUN cargo build # caches code
+#+END_SRC
