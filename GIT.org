@@ -39,3 +39,20 @@ bash
 git push --force origin main
 Caution: Force pushing overwrites history and can cause issues for collaborators working on the same branch. Only do this if you are sure it is safe or you have coordinated with your team. 
 #+END_SRC
+
+** Delete branches
+
+#+BEGIN_SRC
+git pull --prune
+git fetch --prune
+#+END_SRC
+
+
+#+BEGIN_SRC
+###git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | # xargs git branch -d
+#+END_SRC
+
+Notes:
+1. If there are worktrees, the output of sed is '+'. Hence, it does not work
+2. If you merged with squash, the branch is not merged. Hence '-d' does not work, you need '-D'
+
