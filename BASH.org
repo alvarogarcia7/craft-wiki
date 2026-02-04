@@ -32,3 +32,7 @@ DESCRIPTION
     Options:
       -n  Read commands but do not execute them.
 #+END_SRC
+
+** PROJ Invalid syntax
+*** Post increment: passed++
+- See https://github.com/alvarogarcia7/craft-wiki/blob/main/LLM.org#increase-variable
