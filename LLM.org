@@ -1,0 +1,9 @@
+* PROJ LLM
+** Invalid bash syntax
+*** Increase variable
+- From: ((passed++))
+- To: passed=$((passed+1))
+#+BEGIN_SRC
+Replace: \(\(([a-zA-Z_]+)\+\+\)\)
+With: $1=\$(($1+1))
+#+END_SRC
