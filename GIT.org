@@ -4,6 +4,23 @@
 git commit -F -
 #+END_SRC
 
+** Automatically rebase commits
+
+#+BEGIN_SRC
+You could change the editor used by git-rebase -i with git config sequence.editor 'sed -i s/pick/reword/', so that no editor pops for the rebase-todo, and picks are replaced. But that's a bit clumsy because you have to cancel the config after. (there's also core.editor for other cases, and $EDITOR).
+
+You can also run git rebase origin/master -x 'git commit --amend'. -x adds a exec <argument of the -x>, line after each pick in the rebase-todo. Note there's no -i needed here. The amend will allow you to change the commit message, for example git commit --amend -m "new message".
+#+END_SRC
+
+From: https://stackoverflow.com/questions/38233988/automatically-reword-all-rebased-commits
+
+#+BEGIN_SRC
+git rebase "${branch}" -x "$HOME/bin/git_apply_delta_seconds_from_git_commit_date.sh \"${prefix}\" ${time_delta} --force"  
+#+END_SRC
+
+From dotfiles/bin/git_apply_delta_seconds_from_git_commit_date.sh // From ~/.zshrc
+
+
 ** Squash all commits into a new orphan branch
 
 #+BEGIN_SRC
